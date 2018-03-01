@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context="com.ngingearth.maintenanceapp.LoginActivity">
+
+    <android.support.percent.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp">
+
+
+        <ImageView
+            android:id="@+id/imgAndroid"
+            android:layout_width="200dp"
+            android:layout_height="300dp"
+            android:layout_above="@+id/editName"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp"
+            android:src="@drawable/logo7" />
+
+        <EditText
+            android:id="@+id/editName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/editPass"
+            android:layout_alignStart="@+id/editPass"
+            android:layout_centerVertical="true"
+            android:background="#e4f9ff"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            app:layout_widthPercent="75%" />
+
+        <!--android:background="@color/caldroid_sky_blue"-->
+
+        <EditText
+            android:id="@+id/editPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editName"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
+            android:background="#e4f9ff"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            app:layout_widthPercent="75%" />
+
+        <Button
+            android:id="@+id/btnsignin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="50dp"
+            android:text="Sign in" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center|bottom"
+            android:layout_marginBottom="20dp"
+            android:visibility="gone" />
+
+
+    </android.support.percent.PercentRelativeLayout>
+
+</LinearLayout>

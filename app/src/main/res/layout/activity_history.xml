@@ -1,0 +1,83 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ngingearth.maintenanceapp.HistoryActivity">
+
+
+    <android.support.v7.widget.Toolbar
+
+        android:id="@+id/toolbarHistory"
+        app:theme="@style/ToolbarColoredBackArrow"
+        app:popupTheme="@style/AppTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <LinearLayout
+
+        android:id="@+id/linearLayout_event"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_below="@+id/toolbarHistory"
+        android:background="#5197f2"
+        android:orientation="horizontal">
+
+        <NumberPicker
+            android:id="@+id/numberPicker2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbarHistory"
+            android:layout_weight="10.70"
+            android:descendantFocusability="blocksDescendants"
+            android:theme="@style/DefaultNumberPickerTheme"/>
+
+        <NumberPicker
+            android:id="@+id/numberPicker3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.66"
+            android:descendantFocusability="blocksDescendants"
+            android:theme="@style/DefaultNumberPickerTheme"/>
+
+        <Spinner
+            android:id="@+id/spinner3"
+            android:layout_width="68dp"
+            android:layout_height="75dp"
+            android:layout_weight="4.98" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listViewHistory"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="11dp"
+        android:layout_below="@+id/linearLayout_event" />
+
+    <FrameLayout
+        android:id="@+id/fm1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="23dp">
+
+    </FrameLayout>
+
+
+</RelativeLayout>

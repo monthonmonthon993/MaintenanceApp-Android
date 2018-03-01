@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/edt2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="350dp"
+        android:ems="10"
+        android:inputType="text|textMultiLine|textCapSentences" />
+
+    <TextView
+        android:id="@+id/textViewMenuMonth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="18dp"
+        android:text="Menu" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="200dp"
+        android:layout_marginTop="30dp"
+        android:paddingBottom="0dp" >
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/tvchoicem2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp" />
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <RadioButton
+                    android:id="@+id/checkBoxm1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="90dp"
+                    android:layout_marginTop="45dp"
+                    android:text="ปกติ" />
+
+                <RadioButton
+                    android:id="@+id/checkBoxm2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="45dp"
+                    android:text="ผิดปกติ" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tvchoicem3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvchoicem2"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="46dp" />
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <RadioButton
+                    android:id="@+id/checkBoxm3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="90dp"
+                    android:layout_marginTop="110dp"
+                    android:text="ปกติ" />
+
+                <RadioButton
+                    android:id="@+id/checkBoxm4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="110dp"
+                    android:text="ผิดปกติ" />
+
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tvchoicem4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvchoicem3"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="46dp" />
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <RadioButton
+                    android:id="@+id/checkBoxm5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="90dp"
+                    android:layout_marginTop="175dp"
+                    android:text="ปกติ" />
+
+                <RadioButton
+                    android:id="@+id/checkBoxm6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="175dp"
+                    android:text="ผิดปกติ" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tvchoicem5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvchoicem4"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="46dp" />
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+            <RadioButton
+                android:id="@+id/checkBoxm7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="90dp"
+                android:layout_marginTop="240dp"
+                android:text="ปกติ" />
+
+            <RadioButton
+                android:id="@+id/checkBoxm8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="240dp"
+                android:text="ผิดปกติ" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tvchoicem6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvchoicem5"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="46dp" />
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <RadioButton
+                    android:id="@+id/checkBoxm9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="90dp"
+                    android:layout_marginTop="305dp"
+                    android:text="ปกติ" />
+
+                <RadioButton
+                    android:id="@+id/checkBoxm10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="305dp"
+                    android:text="ผิดปกติ" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tvchoicem7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvchoicem6"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="46dp" />
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <RadioButton
+                    android:id="@+id/checkBoxm11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="90dp"
+                    android:layout_marginTop="370dp"
+                    android:text="ปกติ" />
+
+                <RadioButton
+                    android:id="@+id/checkBoxm12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="370dp"
+                    android:text="ผิดปกติ" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tvchoicem8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvchoicem7"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="46dp" />
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <RadioButton
+                    android:id="@+id/checkBoxm13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="90dp"
+                    android:layout_marginTop="435dp"
+                    android:text="ปกติ" />
+
+                <RadioButton
+                    android:id="@+id/checkBoxm14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="435dp"
+                    android:text="ผิดปกติ" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tvchoicem9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvchoicem8"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="46dp" />
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <RadioButton
+                    android:id="@+id/checkBoxm15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="90dp"
+                    android:layout_marginTop="505dp"
+                    android:text="ปกติ" />
+
+                <RadioButton
+                    android:id="@+id/checkBoxm16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="505dp"
+                    android:text="ผิดปกติ" />
+            </RadioGroup>
+
+
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textViewNotationMonth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="320dp"
+        android:layout_weight="1"
+        android:paddingBottom="0dp"
+        android:text="หมายเหตุ" />
+
+
+    <ImageView
+        android:id="@+id/saveMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="18dp"
+        android:clickable="true"
+        app:srcCompat="@android:drawable/ic_menu_save" />
+
+
+
+    <FrameLayout
+        android:id="@+id/fl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+
+</RelativeLayout>
+
+
+

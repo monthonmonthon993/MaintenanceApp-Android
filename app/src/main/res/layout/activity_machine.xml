@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ngingearth.maintenanceapp.MachineActivity">
+
+
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/percentRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/holo_blue_light">
+
+
+        <ImageView
+            android:id="@+id/imgAndroid"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            app:srcCompat="@drawable/wonderwomen" />
+
+        <TextView
+            android:id="@+id/textName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:text="Yamornporn Pariyawet"
+            android:textColor="@android:color/background_dark"
+            android:textSize="3mm"
+            android:textStyle="bold"
+            android:layout_marginLeft="11dp"
+            android:layout_marginStart="11dp"
+            android:layout_above="@+id/textPass"
+            android:layout_toRightOf="@+id/imgAndroid"
+            android:layout_toEndOf="@+id/imgAndroid" />
+
+        <TextView
+            android:id="@+id/textPass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textName"
+            android:layout_alignStart="@+id/textName"
+            android:layout_centerVertical="true"
+            android:text="Code : 033927"
+            android:textColor="@color/colorPrimary"
+            android:textSize="2.5mm" />
+
+        <TextView
+            android:id="@+id/textPost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textPass"
+            android:layout_alignStart="@+id/textPass"
+            android:layout_below="@+id/textPass"
+            android:layout_marginTop="8dp"
+            android:text="Engineer"
+            android:textColor="@color/colorPrimary"
+            android:textSize="2.5mm" />
+
+
+    </android.support.percent.PercentRelativeLayout>
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/percentRelativeLayout" />
+
+
+</RelativeLayout>

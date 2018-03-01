@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.ngingearth.maintenanceapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <application
+        android:name="com.ngingearth.maintenanceapp.Apps.AppController"
+        android:allowBackup="true"
+        android:icon="@drawable/logo10"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon">
+        <activity android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MachineActivity" />
+        <activity
+            android:name=".NavigationActivirty"
+            android:label="@string/title_activity_navigation_activirty"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".MonitorActivity" />
+        <activity android:name=".DatasheetActivity" />
+        <activity
+            android:name=".planActivity"
+            android:label="@string/title_activity_plan"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".HistoryActivity" />
+        <!--<activity android:name=".MylistHistory" />-->
+        <activity android:name=".Spare"></activity>
+    </application>
+
+</manifest>
