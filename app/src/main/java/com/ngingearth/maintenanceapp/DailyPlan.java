@@ -34,9 +34,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * Created by NgiNG on 5/11/2560.
- */
 
 public class DailyPlan extends Fragment {
     private planActivity planActivity;
@@ -73,8 +70,6 @@ public class DailyPlan extends Fragment {
                              Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.daily_plan, container, false);
-
-        EditText test = (EditText) rootView.findViewById(R.id.edt);
 
         Intent intent = getActivity().getIntent();
         machineMap = (HashMap<String, String>)intent.getSerializableExtra("machineMap");
@@ -266,6 +261,10 @@ public class DailyPlan extends Fragment {
             tvchoice6.setText("5.ความต้านทานของขดลวดในแต่ละเฟส");
             tvchoice7.setText("6.วัดสภาพการเป็นฉนวนไฟฟ้า");
             tvchoice8.setText("7.การทดสอบค่าความต้านทานแม่เหล็ก");
+            checkBox15.setVisibility(View.GONE);
+            checkBox16.setVisibility(View.GONE);
+            checkBox17.setVisibility(View.GONE);
+            checkBox18.setVisibility(View.GONE);
 
             save.setOnClickListener(new View.OnClickListener() {
                 @Override
