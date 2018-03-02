@@ -37,8 +37,8 @@ import java.util.List;
 
 public class DailyPlan extends Fragment {
     private planActivity planActivity;
-    private MobileServiceClient mClient;
-    private String name,code,type;
+
+    private String type;
     private HashMap<String, String> machineMap;
     RadioButton checkBox1;
     RadioButton checkBox2;
@@ -59,8 +59,7 @@ public class DailyPlan extends Fragment {
     RadioButton checkBox17;
     RadioButton checkBox18;
     EditText edt;
-    Button btn;
-    int machnum = 0;
+
     private String note;
     private int status;
     private String typePm;
@@ -75,59 +74,37 @@ public class DailyPlan extends Fragment {
         machineMap = (HashMap<String, String>)intent.getSerializableExtra("machineMap");
         type = machineMap.get("type");
 
-        TextView tvchoice1 = (TextView) rootView.findViewById(R.id.tvchoice1);
-        TextView tvchoice2 = (TextView) rootView.findViewById(R.id.tvchoice2);
-        TextView tvchoice3 = (TextView) rootView.findViewById(R.id.tvchoice3);
-        TextView tvchoice4 = (TextView) rootView.findViewById(R.id.tvchoice4);
-        TextView tvchoice5 = (TextView) rootView.findViewById(R.id.tvchoice5);
-        TextView tvchoice6 = (TextView) rootView.findViewById(R.id.tvchoice6);
-        TextView tvchoice7 = (TextView) rootView.findViewById(R.id.tvchoice7);
-        TextView tvchoice8 = (TextView) rootView.findViewById(R.id.tvchoice8);
-        TextView tvchoice9 = (TextView) rootView.findViewById(R.id.tvchoice9);
-        TextView tvchoice10 = (TextView) rootView.findViewById(R.id.tvchoice10);
-        checkBox1 = (RadioButton) rootView.findViewById(R.id.checkBox1);
-        checkBox2 = (RadioButton) rootView.findViewById(R.id.checkBox2);
-        checkBox3 = (RadioButton) rootView.findViewById(R.id.checkBox3);
-        checkBox4 = (RadioButton) rootView.findViewById(R.id.checkBox4);
-        checkBox5 = (RadioButton) rootView.findViewById(R.id.checkBox5);
-        checkBox6 = (RadioButton) rootView.findViewById(R.id.checkBox6);
-        checkBox7 = (RadioButton) rootView.findViewById(R.id.checkBox7);
-        checkBox8 = (RadioButton) rootView.findViewById(R.id.checkBox8);
-        checkBox9 = (RadioButton) rootView.findViewById(R.id.checkBox9);
-        checkBox10 = (RadioButton) rootView.findViewById(R.id.checkBox10);
-         checkBox11 = (RadioButton) rootView.findViewById(R.id.checkBox11);
-        checkBox12 = (RadioButton) rootView.findViewById(R.id.checkBox12);
-        checkBox13 = (RadioButton) rootView.findViewById(R.id.checkBox13);
-        checkBox14 = (RadioButton) rootView.findViewById(R.id.checkBox14);
-        checkBox15 = (RadioButton) rootView.findViewById(R.id.checkBox15);
-        checkBox16 = (RadioButton) rootView.findViewById(R.id.checkBox16);
-        checkBox17 = (RadioButton) rootView.findViewById(R.id.checkBox17);
-        checkBox18 = (RadioButton) rootView.findViewById(R.id.checkBox18);
-//        note = (TextView) rootView.findViewById(R.id.textView13);
-        edt = (EditText) rootView.findViewById(R.id.edt);
-        
+        TextView tvchoice2 = rootView.findViewById(R.id.tvchoice2);
+        TextView tvchoice3 = rootView.findViewById(R.id.tvchoice3);
+        TextView tvchoice4 = rootView.findViewById(R.id.tvchoice4);
+        TextView tvchoice5 = rootView.findViewById(R.id.tvchoice5);
+        TextView tvchoice6 = rootView.findViewById(R.id.tvchoice6);
+        TextView tvchoice7 = rootView.findViewById(R.id.tvchoice7);
+        TextView tvchoice8 = rootView.findViewById(R.id.tvchoice8);
+        TextView tvchoice9 = rootView.findViewById(R.id.tvchoice9);
+        TextView tvchoice10 = rootView.findViewById(R.id.tvchoice10);
+        checkBox1 = rootView.findViewById(R.id.checkBox1);
+        checkBox2 = rootView.findViewById(R.id.checkBox2);
+        checkBox3 = rootView.findViewById(R.id.checkBox3);
+        checkBox4 = rootView.findViewById(R.id.checkBox4);
+        checkBox5 = rootView.findViewById(R.id.checkBox5);
+        checkBox6 = rootView.findViewById(R.id.checkBox6);
+        checkBox7 = rootView.findViewById(R.id.checkBox7);
+        checkBox8 = rootView.findViewById(R.id.checkBox8);
+        checkBox9 = rootView.findViewById(R.id.checkBox9);
+        checkBox10 = rootView.findViewById(R.id.checkBox10);
+        checkBox11 = rootView.findViewById(R.id.checkBox11);
+        checkBox12 = rootView.findViewById(R.id.checkBox12);
+        checkBox13 = rootView.findViewById(R.id.checkBox13);
+        checkBox14 = rootView.findViewById(R.id.checkBox14);
+        checkBox15 = rootView.findViewById(R.id.checkBox15);
+        checkBox16 = rootView.findViewById(R.id.checkBox16);
+        checkBox17 = rootView.findViewById(R.id.checkBox17);
+        checkBox18 = rootView.findViewById(R.id.checkBox18);
 
-        FrameLayout touchInterceptor = (FrameLayout)rootView.findViewById(R.id.touchinterceptor);
-        touchInterceptor.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    if (edt.isFocused()) {
-                        Rect outRect = new Rect();
-                        edt.getGlobalVisibleRect(outRect);
-                        if (!outRect.contains((int)event.getRawX(), (int)event.getRawY())) {
-                            edt.clearFocus();
-                            InputMethodManager imm = (InputMethodManager) v.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-                            imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
-                        }
-                    }
-                }
-                return false;
-            }
-        });
+        edt = rootView.findViewById(R.id.edt);
 
-        ImageView save = (ImageView) rootView.findViewById(R.id.save);
-
+        ImageView save = rootView.findViewById(R.id.save);
 
         if(type.equals("compressor")){
             tvchoice2.setText("1.ระดับน้ำมันของเครื่องอัดอากาศ");
@@ -137,6 +114,8 @@ public class DailyPlan extends Fragment {
             tvchoice6.setText("5.ความดันตกคร่อม Air Filter");
             tvchoice7.setText("6.อัตราการปล่อยอากาศของ Auto drain");
             tvchoice8.setText("7.การทำงาน Auto drain");
+            tvchoice9.setVisibility(View.GONE);
+            tvchoice10.setVisibility(View.GONE);
             checkBox15.setVisibility(View.GONE);
             checkBox16.setVisibility(View.GONE);
             checkBox17.setVisibility(View.GONE);
@@ -179,6 +158,7 @@ public class DailyPlan extends Fragment {
             tvchoice7.setText("6.สภาพทั่วไปของล่อฟ้า");
             tvchoice8.setText("7.อุปกรณ์เปลี่ยนแทปขณะรับโหลด");
             tvchoice9.setText("8.สภาพภายนอกโดยทั่วๆไป");
+            tvchoice10.setVisibility(View.GONE);
             checkBox17.setVisibility(View.GONE);
             checkBox18.setVisibility(View.GONE);
 
@@ -261,6 +241,8 @@ public class DailyPlan extends Fragment {
             tvchoice6.setText("5.ความต้านทานของขดลวดในแต่ละเฟส");
             tvchoice7.setText("6.วัดสภาพการเป็นฉนวนไฟฟ้า");
             tvchoice8.setText("7.การทดสอบค่าความต้านทานแม่เหล็ก");
+            tvchoice9.setVisibility(View.GONE);
+            tvchoice10.setVisibility(View.GONE);
             checkBox15.setVisibility(View.GONE);
             checkBox16.setVisibility(View.GONE);
             checkBox17.setVisibility(View.GONE);

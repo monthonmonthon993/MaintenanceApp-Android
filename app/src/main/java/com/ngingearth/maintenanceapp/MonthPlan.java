@@ -92,54 +92,32 @@ public class MonthPlan extends Fragment {
         machineMap = (HashMap<String, String>)intent.getSerializableExtra("machineMap");
         type = machineMap.get("type");
 
-        TextView tvchoicem2 = (TextView) rootView.findViewById(R.id.tvchoicem2);
-        TextView tvchoicem3 = (TextView) rootView.findViewById(R.id.tvchoicem3);
-        TextView tvchoicem4 = (TextView) rootView.findViewById(R.id.tvchoicem4);
-        TextView tvchoicem5 = (TextView) rootView.findViewById(R.id.tvchoicem5);
-        TextView tvchoicem6 = (TextView) rootView.findViewById(R.id.tvchoicem6);
-        TextView tvchoicem7 = (TextView) rootView.findViewById(R.id.tvchoicem7);
-        TextView tvchoicem8 = (TextView) rootView.findViewById(R.id.tvchoicem8);
-        TextView tvchoicem9 = (TextView) rootView.findViewById(R.id.tvchoicem9);
-         checkBoxm1 = (RadioButton) rootView.findViewById(R.id.checkBoxm1);
-         checkBoxm2 = (RadioButton) rootView.findViewById(R.id.checkBoxm2);
-         checkBoxm3 = (RadioButton) rootView.findViewById(R.id.checkBoxm3);
-         checkBoxm4= (RadioButton) rootView.findViewById(R.id.checkBoxm4);
-         checkBoxm5= (RadioButton) rootView.findViewById(R.id.checkBoxm5);
-         checkBoxm6 = (RadioButton) rootView.findViewById(R.id.checkBoxm6);
-         checkBoxm7 = (RadioButton) rootView.findViewById(R.id.checkBoxm7);
-         checkBoxm8= (RadioButton) rootView.findViewById(R.id.checkBoxm8);
-         checkBoxm9= (RadioButton) rootView.findViewById(R.id.checkBoxm9);
-         checkBoxm10= (RadioButton) rootView.findViewById(R.id.checkBoxm10);
-         checkBoxm11= (RadioButton) rootView.findViewById(R.id.checkBoxm11);
-         checkBoxm12= (RadioButton) rootView.findViewById(R.id.checkBoxm12);
-         checkBoxm13= (RadioButton) rootView.findViewById(R.id.checkBoxm13);
-         checkBoxm14= (RadioButton) rootView.findViewById(R.id.checkBoxm14);
-         checkBoxm15= (RadioButton) rootView.findViewById(R.id.checkBoxm15);
-         checkBoxm16= (RadioButton) rootView.findViewById(R.id.checkBoxm16);
+        TextView tvchoicem2 = rootView.findViewById(R.id.tvchoicem2);
+        TextView tvchoicem3 = rootView.findViewById(R.id.tvchoicem3);
+        TextView tvchoicem4 = rootView.findViewById(R.id.tvchoicem4);
+        TextView tvchoicem5 =  rootView.findViewById(R.id.tvchoicem5);
+        TextView tvchoicem6 =  rootView.findViewById(R.id.tvchoicem6);
+        TextView tvchoicem7 =  rootView.findViewById(R.id.tvchoicem7);
+        TextView tvchoicem8 =  rootView.findViewById(R.id.tvchoicem8);
+        TextView tvchoicem9 =  rootView.findViewById(R.id.tvchoicem9);
+         checkBoxm1 =  rootView.findViewById(R.id.checkBoxm1);
+         checkBoxm2 =  rootView.findViewById(R.id.checkBoxm2);
+         checkBoxm3 =  rootView.findViewById(R.id.checkBoxm3);
+         checkBoxm4 =  rootView.findViewById(R.id.checkBoxm4);
+         checkBoxm5 =  rootView.findViewById(R.id.checkBoxm5);
+         checkBoxm6 =  rootView.findViewById(R.id.checkBoxm6);
+         checkBoxm7 =  rootView.findViewById(R.id.checkBoxm7);
+         checkBoxm8 =  rootView.findViewById(R.id.checkBoxm8);
+         checkBoxm9 =  rootView.findViewById(R.id.checkBoxm9);
+         checkBoxm10 =  rootView.findViewById(R.id.checkBoxm10);
+         checkBoxm11 =  rootView.findViewById(R.id.checkBoxm11);
+         checkBoxm12 =  rootView.findViewById(R.id.checkBoxm12);
+         checkBoxm13 =  rootView.findViewById(R.id.checkBoxm13);
+         checkBoxm14 =  rootView.findViewById(R.id.checkBoxm14);
+         checkBoxm15 =  rootView.findViewById(R.id.checkBoxm15);
+         checkBoxm16 =  rootView.findViewById(R.id.checkBoxm16);
 
-
-        TextView txtNotationMonth = (TextView) rootView.findViewById(R.id.textViewNotationMonth);
-        edt = (EditText)rootView.findViewById(R.id.edt2);
-
-
-        final FrameLayout touchInterceptor = (FrameLayout)rootView.findViewById(R.id.fl);
-        touchInterceptor.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    if (edt.isFocused()) {
-                        Rect outRect = new Rect();
-                        edt.getGlobalVisibleRect(outRect);
-                        if (!outRect.contains((int)event.getRawX(), (int)event.getRawY())) {
-                            edt.clearFocus();
-                            InputMethodManager imm = (InputMethodManager) v.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-                            imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
-                        }
-                    }
-                }
-                return false;
-            }
-        });
+        edt = rootView.findViewById(R.id.edt2);
 
         ImageView saveMonth = (ImageView) rootView.findViewById(R.id.saveMonth);
 
@@ -149,6 +127,9 @@ public class MonthPlan extends Fragment {
             tvchoicem4.setText("3.ทำความสะอาดชุดระบายความร้อน after-cooler");
             tvchoicem5.setText("4.ระบบส่งกำลังของเครื่องอัดอากาศ");
             tvchoicem6.setText("5.ประสิทธิภาพของเครื่องมือที่ใช้ลม");
+            tvchoicem7.setVisibility(View.GONE);
+            tvchoicem8.setVisibility(View.GONE);
+            tvchoicem9.setVisibility(View.GONE);
             checkBoxm11.setVisibility(View.GONE);
             checkBoxm12.setVisibility(View.GONE);
             checkBoxm13.setVisibility(View.GONE);
@@ -193,6 +174,7 @@ public class MonthPlan extends Fragment {
             tvchoicem6.setText("5.ระบบ Nitrogen-Seal");
             tvchoicem7.setText("6.สภาพทั่วไปของล่อฟ้า");
             tvchoicem8.setText("7.อุปกรณ์เปลี่ยนแทปขณะรับโหลด");
+            tvchoicem9.setVisibility(View.GONE);
             checkBoxm15.setVisibility(View.GONE);
             checkBoxm16.setVisibility(View.GONE);
 
@@ -274,6 +256,15 @@ public class MonthPlan extends Fragment {
             tvchoicem4.setText("3.จตรวจสอบความตึงของสายพาน");
             tvchoicem5.setText("4.ตรวจสอบการวางแนวของมอเตอร์กับโหลด");
             tvchoicem6.setText("5.ทำความสะอาดอุปกรณควบคุม");
+            tvchoicem7.setVisibility(View.GONE);
+            tvchoicem8.setVisibility(View.GONE);
+            tvchoicem9.setVisibility(View.GONE);
+            checkBoxm11.setVisibility(View.GONE);
+            checkBoxm12.setVisibility(View.GONE);
+            checkBoxm13.setVisibility(View.GONE);
+            checkBoxm14.setVisibility(View.GONE);
+            checkBoxm15.setVisibility(View.GONE);
+            checkBoxm16.setVisibility(View.GONE);
 
             saveMonth.setOnClickListener(new View.OnClickListener() {
                 @Override
