@@ -5,103 +5,122 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/edt2"
+    <RelativeLayout
+        android:id="@+id/menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="350dp"
-        android:ems="10"
-        android:inputType="text|textMultiLine|textCapSentences" />
+        android:layout_alignParentTop="true">
 
-    <TextView
-        android:id="@+id/textViewMenuMonth"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="18dp"
-        android:text="Menu" />
+        <TextView
+            android:id="@+id/textViewMenuMonth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:paddingStart="20dp"
+            android:paddingLeft="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:layout_centerHorizontal="true"
+            android:text="Menu" />
+
+        <ImageView
+            android:id="@+id/saveMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:clickable="true"
+            app:srcCompat="@android:drawable/ic_menu_save" />
+
+    </RelativeLayout>
+
 
     <ScrollView
-        android:layout_width="wrap_content"
+        android:id="@+id/scrollQuestion"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="200dp"
-        android:layout_marginTop="30dp"
-        android:paddingBottom="0dp" >
+        android:layout_below="@+id/menu"
+        android:layout_above="@+id/note">
 
         <RelativeLayout
             android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
-
 
             <TextView
                 android:id="@+id/tvchoicem2"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="20dp" />
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingStart="40dp"
+                android:paddingLeft="40dp"
+                android:paddingEnd="40dp" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="fill_parent"
+                android:id="@+id/rg1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="1">
+                android:layout_below="@id/tvchoicem2"
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/checkBoxm1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="90dp"
                     android:layout_marginLeft="90dp"
-                    android:layout_marginTop="45dp"
                     android:text="ปกติ" />
 
                 <RadioButton
                     android:id="@+id/checkBoxm2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="60dp"
                     android:layout_marginStart="50dp"
-                    android:layout_marginTop="45dp"
+                    android:layout_marginLeft="50dp"
                     android:text="ผิดปกติ" />
 
             </RadioGroup>
 
             <TextView
                 android:id="@+id/tvchoicem3"
-                android:layout_width="wrap_content"
+                android:layout_below="@+id/rg1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvchoicem2"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="46dp" />
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingStart="40dp"
+                android:paddingLeft="40dp"
+                android:paddingEnd="40dp"/>
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="fill_parent"
+                android:id="@+id/rg2"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="1">
+                android:layout_below="@id/tvchoicem3"
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/checkBoxm3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="90dp"
                     android:layout_marginLeft="90dp"
-                    android:layout_marginTop="110dp"
                     android:text="ปกติ" />
 
                 <RadioButton
                     android:id="@+id/checkBoxm4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="60dp"
                     android:layout_marginStart="50dp"
-                    android:layout_marginTop="110dp"
+                    android:layout_marginLeft="50dp"
                     android:text="ผิดปกติ" />
 
 
@@ -109,201 +128,213 @@
 
             <TextView
                 android:id="@+id/tvchoicem4"
-                android:layout_width="wrap_content"
+                android:layout_below="@+id/rg2"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvchoicem3"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="46dp" />
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingStart="40dp"
+                android:paddingLeft="40dp"
+                android:paddingEnd="40dp" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="fill_parent"
+                android:id="@+id/rg3"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="1">
+                android:layout_below="@id/tvchoicem4"
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/checkBoxm5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="90dp"
                     android:layout_marginLeft="90dp"
-                    android:layout_marginTop="175dp"
                     android:text="ปกติ" />
 
                 <RadioButton
                     android:id="@+id/checkBoxm6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="60dp"
                     android:layout_marginStart="50dp"
-                    android:layout_marginTop="175dp"
+                    android:layout_marginLeft="50dp"
                     android:text="ผิดปกติ" />
 
             </RadioGroup>
 
             <TextView
                 android:id="@+id/tvchoicem5"
-                android:layout_width="wrap_content"
+                android:layout_below="@+id/rg3"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvchoicem4"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="46dp" />
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingStart="40dp"
+                android:paddingLeft="40dp"
+                android:paddingEnd="40dp" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="fill_parent"
+                android:id="@+id/rg4"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="1">
+                android:layout_below="@id/tvchoicem5"
+                android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/checkBoxm7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginStart="90dp"
                 android:layout_marginLeft="90dp"
-                android:layout_marginTop="240dp"
                 android:text="ปกติ" />
 
             <RadioButton
                 android:id="@+id/checkBoxm8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="60dp"
                 android:layout_marginStart="50dp"
-                android:layout_marginTop="240dp"
+                android:layout_marginLeft="50dp"
                 android:text="ผิดปกติ" />
 
             </RadioGroup>
 
             <TextView
                 android:id="@+id/tvchoicem6"
-                android:layout_width="wrap_content"
+                android:layout_below="@+id/rg4"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvchoicem5"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="46dp" />
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingStart="40dp"
+                android:paddingLeft="40dp"
+                android:paddingEnd="40dp" />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="fill_parent"
+                android:id="@+id/rg5"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="1">
+                android:layout_below="@id/tvchoicem6"
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/checkBoxm9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="90dp"
                     android:layout_marginLeft="90dp"
-                    android:layout_marginTop="305dp"
                     android:text="ปกติ" />
 
                 <RadioButton
                     android:id="@+id/checkBoxm10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="60dp"
                     android:layout_marginStart="50dp"
-                    android:layout_marginTop="305dp"
+                    android:layout_marginLeft="50dp"
                     android:text="ผิดปกติ" />
             </RadioGroup>
 
             <TextView
                 android:id="@+id/tvchoicem7"
-                android:layout_width="wrap_content"
+                android:layout_below="@+id/rg5"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvchoicem6"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="46dp" />
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingStart="40dp"
+                android:paddingLeft="40dp"
+                android:paddingEnd="40dp"  />
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="fill_parent"
+                android:id="@+id/rg6"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="1">
+                android:layout_below="@id/tvchoicem7"
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/checkBoxm11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="90dp"
                     android:layout_marginLeft="90dp"
-                    android:layout_marginTop="370dp"
                     android:text="ปกติ" />
 
                 <RadioButton
                     android:id="@+id/checkBoxm12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="60dp"
                     android:layout_marginStart="50dp"
-                    android:layout_marginTop="370dp"
+                    android:layout_marginLeft="50dp"
                     android:text="ผิดปกติ" />
             </RadioGroup>
 
             <TextView
                 android:id="@+id/tvchoicem8"
-                android:layout_width="wrap_content"
+                android:layout_below="@+id/rg6"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvchoicem7"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="46dp" />
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingStart="40dp"
+                android:paddingLeft="40dp"
+                android:paddingEnd="40dp"/>
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="fill_parent"
+                android:id="@+id/rg7"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="1">
+                android:layout_below="@id/tvchoicem8"
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/checkBoxm13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="90dp"
                     android:layout_marginLeft="90dp"
-                    android:layout_marginTop="435dp"
                     android:text="ปกติ" />
 
                 <RadioButton
                     android:id="@+id/checkBoxm14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="60dp"
                     android:layout_marginStart="50dp"
-                    android:layout_marginTop="435dp"
+                    android:layout_marginLeft="50dp"
                     android:text="ผิดปกติ" />
             </RadioGroup>
 
             <TextView
                 android:id="@+id/tvchoicem9"
-                android:layout_width="wrap_content"
+                android:layout_below="@+id/rg7"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvchoicem8"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="46dp" />
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingStart="40dp"
+                android:paddingLeft="40dp"
+                android:paddingEnd="40dp"/>
 
             <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="fill_parent"
+                android:id="@+id/rg8"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="1">
+                android:layout_below="@id/tvchoicem9"
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/checkBoxm15"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="90dp"
                     android:layout_marginLeft="90dp"
-                    android:layout_marginTop="505dp"
                     android:text="ปกติ" />
 
                 <RadioButton
                     android:id="@+id/checkBoxm16"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="60dp"
                     android:layout_marginStart="50dp"
-                    android:layout_marginTop="505dp"
+                    android:layout_marginLeft="50dp"
                     android:text="ผิดปกติ" />
             </RadioGroup>
 
@@ -313,51 +344,34 @@
         </RelativeLayout>
     </ScrollView>
 
-
     <RelativeLayout
+        android:id="@+id/note"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:weightSum="1"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/textViewNotationMonth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingLeft="20dp"
+            android:paddingEnd="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="หมายเหตุ" />
+
+        <EditText
+            android:id="@+id/edt2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewNotationMonth"
+            android:ems="10"
+            android:inputType="text|textMultiLine|textCapSentences" />
+
     </RelativeLayout>
-
-    <TextView
-        android:id="@+id/textViewNotationMonth"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="320dp"
-        android:layout_weight="1"
-        android:paddingBottom="0dp"
-        android:text="หมายเหตุ" />
-
-
-    <ImageView
-        android:id="@+id/saveMonth"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="18dp"
-        android:layout_marginRight="18dp"
-        android:layout_marginTop="18dp"
-        android:clickable="true"
-        app:srcCompat="@android:drawable/ic_menu_save" />
-
-
-
-    <FrameLayout
-        android:id="@+id/fl"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </FrameLayout>
 
 </RelativeLayout>
 
