@@ -87,7 +87,6 @@ public class MonthPlan extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.month_plan, container, false);
 
-//        s = getActivity().getIntent().getStringExtra("Machine");
         Intent intent = getActivity().getIntent();
         machineMap = (HashMap<String, String>)intent.getSerializableExtra("machineMap");
         type = machineMap.get("type");
@@ -118,8 +117,9 @@ public class MonthPlan extends Fragment {
          checkBoxm16 =  rootView.findViewById(R.id.checkBoxm16);
 
         edt = rootView.findViewById(R.id.edt2);
+        typePm = "monthly";
 
-        ImageView saveMonth = (ImageView) rootView.findViewById(R.id.saveMonth);
+        ImageView saveMonth = rootView.findViewById(R.id.saveMonth);
 
         if(type.equals("compressor")){
             tvchoicem2.setText("1.ทำความสะอาดไส้กรองอากาศ");
@@ -140,8 +140,6 @@ public class MonthPlan extends Fragment {
             saveMonth.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    //DateFormat dateFormat = new SimpleDateFormat("E yyyy/MM/dd");
-                    Date date = new Date();
                     if((checkBoxm1.isChecked() || checkBoxm2.isChecked() )&&
                             (checkBoxm3.isChecked() || checkBoxm4.isChecked())&&
                             (checkBoxm5.isChecked() || checkBoxm6.isChecked())&&
@@ -149,18 +147,26 @@ public class MonthPlan extends Fragment {
                             (checkBoxm9.isChecked() || checkBoxm10.isChecked())
 
                             ) {
-
                         note = edt.getText().toString();
                         status = 0;
-                        if (note.isEmpty()) {
-                            status=1;
+                        if(checkBoxm2.isChecked() || checkBoxm4.isChecked() ||
+                                checkBoxm6.isChecked() || checkBoxm8.isChecked() ||
+                                checkBoxm10.isChecked()) {
+                            if (note.matches("")){
+                                Toast.makeText(getActivity(), "Please take a note for some mistake", Toast.LENGTH_SHORT).show();
+
+                            } else {
+                                listener.getDataFromFragment(note, status, typePm);
+                                Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            status = 1;
                             note = "ปกติ";
+                            edt.setText("", TextView.BufferType.EDITABLE);
+                            listener.getDataFromFragment(note, status, typePm);
+                            Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
+                            note = "";
                         }
-                        typePm = "monthly";
-                        listener.getDataFromFragment(note, status, typePm);
-
-                        Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
-
                     }
                     else
                         Toast.makeText(getActivity(),"Please Check all Questions", Toast.LENGTH_SHORT).show();
@@ -181,8 +187,6 @@ public class MonthPlan extends Fragment {
             saveMonth.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    //DateFormat dateFormat = new SimpleDateFormat("E yyyy/MM/dd");
-                    Date date = new Date();
                     if((checkBoxm1.isChecked() || checkBoxm2.isChecked() )&&
                             (checkBoxm3.isChecked() || checkBoxm4.isChecked())&&
                             (checkBoxm5.isChecked() || checkBoxm6.isChecked())&&
@@ -191,18 +195,27 @@ public class MonthPlan extends Fragment {
                             (checkBoxm11.isChecked() || checkBoxm12.isChecked())&&
                             (checkBoxm13.isChecked() || checkBoxm14.isChecked())
                             ) {
-
                         note = edt.getText().toString();
                         status = 0;
-                        if (note.isEmpty()) {
-                            status=1;
+                        if(checkBoxm2.isChecked() || checkBoxm4.isChecked() ||
+                                checkBoxm6.isChecked() || checkBoxm8.isChecked() ||
+                                checkBoxm10.isChecked() || checkBoxm12.isChecked() ||
+                                checkBoxm14.isChecked()) {
+                            if (note.matches("")){
+                                Toast.makeText(getActivity(), "Please take a note for some mistake", Toast.LENGTH_SHORT).show();
+
+                            } else {
+                                listener.getDataFromFragment(note, status, typePm);
+                                Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            status = 1;
                             note = "ปกติ";
+                            edt.setText("", TextView.BufferType.EDITABLE);
+                            listener.getDataFromFragment(note, status, typePm);
+                            Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
+                            note = "";
                         }
-                        typePm = "monthly";
-                        listener.getDataFromFragment(note, status, typePm);
-
-
-                        Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
                     }
                     else
                         Toast.makeText(getActivity(),"Please Check all Questions", Toast.LENGTH_SHORT).show();
@@ -233,16 +246,25 @@ public class MonthPlan extends Fragment {
                             ) {
                         note = edt.getText().toString();
                         status = 0;
-                        if (note.isEmpty()) {
-                            status=1;
+                        if(checkBoxm2.isChecked() || checkBoxm4.isChecked() ||
+                                checkBoxm6.isChecked() || checkBoxm8.isChecked() ||
+                                checkBoxm10.isChecked() || checkBoxm12.isChecked() ||
+                                checkBoxm14.isChecked() || checkBoxm16.isChecked()) {
+                            if (note.matches("")){
+                                Toast.makeText(getActivity(), "Please take a note for some mistake", Toast.LENGTH_SHORT).show();
+
+                            } else {
+                                listener.getDataFromFragment(note, status, typePm);
+                                Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            status = 1;
                             note = "ปกติ";
+                            edt.setText("", TextView.BufferType.EDITABLE);
+                            listener.getDataFromFragment(note, status, typePm);
+                            Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
+                            note = "";
                         }
-                        typePm = "monthly";
-                        listener.getDataFromFragment(note, status, typePm);
-
-
-                        Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
-
                     }
                     else
                         Toast.makeText(getActivity(),"Please Check all Questions", Toast.LENGTH_SHORT).show();
@@ -273,21 +295,28 @@ public class MonthPlan extends Fragment {
                             (checkBoxm3.isChecked() || checkBoxm4.isChecked())&&
                             (checkBoxm5.isChecked() || checkBoxm6.isChecked())&&
                             (checkBoxm7.isChecked() || checkBoxm8.isChecked())&&
-                            (checkBoxm9.isChecked() || checkBoxm10.isChecked())&&
-                            (checkBoxm11.isChecked() || checkBoxm12.isChecked())&&
-                            (checkBoxm13.isChecked() || checkBoxm14.isChecked())&&
-                            (checkBoxm15.isChecked() || checkBoxm16.isChecked())
+                            (checkBoxm9.isChecked() || checkBoxm10.isChecked())
                             ) {
                         note = edt.getText().toString();
                         status = 0;
-                        if (note.isEmpty()) {
-                            status=1;
-                            note = "ปกติ";
-                        }
-                        typePm = "monthly";
-                        listener.getDataFromFragment(note, status, typePm);
+                        if(checkBoxm2.isChecked() || checkBoxm4.isChecked() ||
+                                checkBoxm6.isChecked() || checkBoxm8.isChecked() ||
+                                checkBoxm10.isChecked()) {
+                            if (note.matches("")){
+                                Toast.makeText(getActivity(), "Please take a note for some mistake", Toast.LENGTH_SHORT).show();
 
-                        Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
+                            } else {
+                                listener.getDataFromFragment(note, status, typePm);
+                                Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            status = 1;
+                            note = "ปกติ";
+                            edt.setText("", TextView.BufferType.EDITABLE);
+                            listener.getDataFromFragment(note, status, typePm);
+                            Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
+                            note = "";
+                        }
                     }
                     else
                         Toast.makeText(getActivity(),"Please Check all Questions", Toast.LENGTH_SHORT).show();

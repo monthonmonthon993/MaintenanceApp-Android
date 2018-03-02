@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -104,6 +105,8 @@ public class DailyPlan extends Fragment {
 
         edt = rootView.findViewById(R.id.edt);
 
+        typePm = "daily";
+
         ImageView save = rootView.findViewById(R.id.save);
 
         if(type.equals("compressor")){
@@ -121,6 +124,8 @@ public class DailyPlan extends Fragment {
             checkBox17.setVisibility(View.GONE);
             checkBox18.setVisibility(View.GONE);
 
+
+
             save.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -132,16 +137,28 @@ public class DailyPlan extends Fragment {
                             (checkBox11.isChecked() || checkBox12.isChecked())&&
                             (checkBox13.isChecked() || checkBox14.isChecked())
                             ) {
-
                         note = edt.getText().toString();
                         status = 0;
-                        if (note.isEmpty()) {
-                            status=1;
+                        if(checkBox2.isChecked() || checkBox4.isChecked() ||
+                                checkBox6.isChecked() || checkBox8.isChecked() ||
+                                checkBox10.isChecked() || checkBox12.isChecked() ||
+                                checkBox14.isChecked()) {
+                            if (note.matches("")){
+                                Toast.makeText(getActivity(), "Please take a note for some mistake", Toast.LENGTH_SHORT).show();
+
+                            } else {
+                                planActivity.getDataFromFragment(note, status, typePm);
+                                Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            status = 1;
                             note = "ปกติ";
+                            edt.setText("", TextView.BufferType.EDITABLE);
+                            planActivity.getDataFromFragment(note, status, typePm);
+                            Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
+                            note = "";
                         }
-                        typePm = "daily";
-                        planActivity.getDataFromFragment(note, status, typePm);
-                        Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
+
 
                     }
                     else
@@ -175,16 +192,27 @@ public class DailyPlan extends Fragment {
                             (checkBox13.isChecked() || checkBox14.isChecked())&&
                             (checkBox15.isChecked() || checkBox16.isChecked())
                             ) {
-
                         note = edt.getText().toString();
                         status = 0;
-                        if (note.isEmpty()) {
-                            status=1;
+                        if(checkBox2.isChecked() || checkBox4.isChecked() ||
+                                checkBox6.isChecked() || checkBox8.isChecked() ||
+                                checkBox10.isChecked() || checkBox12.isChecked() ||
+                                checkBox14.isChecked() || checkBox16.isChecked()) {
+                            if (note.matches("")){
+                                Toast.makeText(getActivity(), "Please take a note for some mistake", Toast.LENGTH_SHORT).show();
+
+                            } else {
+                                planActivity.getDataFromFragment(note, status, typePm);
+                                Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            status = 1;
                             note = "ปกติ";
+                            edt.setText("", TextView.BufferType.EDITABLE);
+                            planActivity.getDataFromFragment(note, status, typePm);
+                            Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
+                            note = "";
                         }
-                        typePm = "daily";
-                        planActivity.getDataFromFragment(note, status, typePm);
-                        Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
                     }
                     else
                         Toast.makeText(getActivity(),"Please Check all Questions", Toast.LENGTH_SHORT).show();
@@ -216,16 +244,28 @@ public class DailyPlan extends Fragment {
                             (checkBox15.isChecked() || checkBox16.isChecked())&&
                             (checkBox17.isChecked() || checkBox18.isChecked())
                             ) {
-
                         note = edt.getText().toString();
                         status = 0;
-                        if (note.isEmpty()) {
-                            status=1;
+                        if(checkBox2.isChecked() || checkBox4.isChecked() ||
+                                checkBox6.isChecked() || checkBox8.isChecked() ||
+                                checkBox10.isChecked() || checkBox12.isChecked() ||
+                                checkBox14.isChecked() || checkBox16.isChecked() ||
+                                checkBox18.isChecked()) {
+                            if (note.matches("")){
+                                Toast.makeText(getActivity(), "Please take a note for some mistake", Toast.LENGTH_SHORT).show();
+
+                            } else {
+                                planActivity.getDataFromFragment(note, status, typePm);
+                                Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            status = 1;
                             note = "ปกติ";
+                            edt.setText("", TextView.BufferType.EDITABLE);
+                            planActivity.getDataFromFragment(note, status, typePm);
+                            Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
+                            note = "";
                         }
-                        typePm = "daily";
-                        planActivity.getDataFromFragment(note, status, typePm);
-                        Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
                     }
 
                     else
@@ -257,20 +297,29 @@ public class DailyPlan extends Fragment {
                             (checkBox7.isChecked() || checkBox8.isChecked())&&
                             (checkBox9.isChecked() || checkBox10.isChecked())&&
                             (checkBox11.isChecked() || checkBox12.isChecked())&&
-                            (checkBox13.isChecked() || checkBox14.isChecked())&&
-                            (checkBox15.isChecked() || checkBox16.isChecked())&&
-                            (checkBox17.isChecked() || checkBox18.isChecked())
+                            (checkBox13.isChecked() || checkBox14.isChecked())
                             ) {
-
                         note = edt.getText().toString();
                         status = 0;
-                        if (note.isEmpty()) {
-                            status=1;
+                        if(checkBox2.isChecked() || checkBox4.isChecked() ||
+                                checkBox6.isChecked() || checkBox8.isChecked() ||
+                                checkBox10.isChecked() || checkBox12.isChecked() ||
+                                checkBox14.isChecked()) {
+                            if (note.matches("")){
+                                Toast.makeText(getActivity(), "Please take a note for some mistake", Toast.LENGTH_SHORT).show();
+
+                            } else {
+                                planActivity.getDataFromFragment(note, status, typePm);
+                                Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            status = 1;
                             note = "ปกติ";
+                            edt.setText("", TextView.BufferType.EDITABLE);
+                            planActivity.getDataFromFragment(note, status, typePm);
+                            Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
+                            note = "";
                         }
-                        typePm = "daily";
-                        planActivity.getDataFromFragment(note, status, typePm);
-                        Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
                     }
 
                     else

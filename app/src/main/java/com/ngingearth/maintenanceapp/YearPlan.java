@@ -62,11 +62,6 @@ public class YearPlan extends Fragment {
 
     private MyFragmentListener listener;
 
-    public static YearPlan newInstance() {
-        return new YearPlan();
-    }
-
-
     public interface MyFragmentListener {
         void getDataFromFragment(String note, int status, String typePm);
     }
@@ -80,8 +75,6 @@ public class YearPlan extends Fragment {
         }
     }
 
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -93,7 +86,6 @@ public class YearPlan extends Fragment {
 
         edt = rootView.findViewById(R.id.edt3);
 
-        TextView tvchoicey1 =  rootView.findViewById(R.id.tvchoicey1);
         TextView tvchoicey2 =  rootView.findViewById(R.id.tvchoicey2);
         TextView tvchoicey3 =  rootView.findViewById(R.id.tvchoicey3);
         TextView tvchoicey4 =  rootView.findViewById(R.id.tvchoicey4);
@@ -101,7 +93,6 @@ public class YearPlan extends Fragment {
         TextView tvchoicey6 =  rootView.findViewById(R.id.tvchoicey6);
         TextView tvchoicey7 =  rootView.findViewById(R.id.tvchoicey7);
         TextView tvchoicey8 =  rootView.findViewById(R.id.tvchoicey8);
-        TextView tvchoicey9 =  rootView.findViewById(R.id.textViewy9);
          checkBoxy1 =  rootView.findViewById(R.id.checkBoxy1);
          checkBoxy2 =  rootView.findViewById(R.id.checkBoxy2);
          checkBoxy3 =  rootView.findViewById(R.id.checkBoxy3);
@@ -117,9 +108,8 @@ public class YearPlan extends Fragment {
          checkBoxy13 =  rootView.findViewById(R.id.checkBoxy13);
          checkBoxy14 =  rootView.findViewById(R.id.checkBoxy14);
 
-
         ImageView saveYear = rootView.findViewById(R.id.save3);
-
+        typePm = "yearly";
 
         if(type.equals("compressor")){
             tvchoicey2.setText("1.เปลี่ยนน้ำมันของเครื่องอัดอากาศ");
@@ -147,19 +137,24 @@ public class YearPlan extends Fragment {
                     if((checkBoxy1.isChecked() || checkBoxy2.isChecked() )&&
                             (checkBoxy3.isChecked() || checkBoxy4.isChecked())
                             ) {
-
-//
-
                         note = edt.getText().toString();
                         status = 0;
-                        if (note.isEmpty()) {
-                            status=1;
-                            note = "ปกติ";
-                        }
-                        typePm = "yearly";
-                        listener.getDataFromFragment(note, status, typePm);
+                        if(checkBoxy2.isChecked() || checkBoxy4.isChecked()) {
+                            if (note.matches("")){
+                                Toast.makeText(getActivity(), "Please take a note for some mistake", Toast.LENGTH_SHORT).show();
 
-                        Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
+                            } else {
+                                listener.getDataFromFragment(note, status, typePm);
+                                Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            status = 1;
+                            note = "ปกติ";
+                            edt.setText("", TextView.BufferType.EDITABLE);
+                            listener.getDataFromFragment(note, status, typePm);
+                            Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
+                            note = "";
+                        }
                     }
                     else
                         Toast.makeText(getActivity(),"Please Check all Questions", Toast.LENGTH_SHORT).show();
@@ -192,18 +187,25 @@ public class YearPlan extends Fragment {
                             (checkBoxy7.isChecked() || checkBoxy8.isChecked())
 
                             ) {
-
-
                         note = edt.getText().toString();
                         status = 0;
-                        if (note.isEmpty()) {
-                            status=1;
-                            note = "ปกติ";
-                        }
-                        typePm = "yearly";
-                        listener.getDataFromFragment(note, status, typePm);
+                        if(checkBoxy2.isChecked() || checkBoxy4.isChecked() ||
+                                checkBoxy6.isChecked() || checkBoxy8.isChecked()) {
+                            if (note.matches("")){
+                                Toast.makeText(getActivity(), "Please take a note for some mistake", Toast.LENGTH_SHORT).show();
 
-                        Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
+                            } else {
+                                listener.getDataFromFragment(note, status, typePm);
+                                Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            status = 1;
+                            note = "ปกติ";
+                            edt.setText("", TextView.BufferType.EDITABLE);
+                            listener.getDataFromFragment(note, status, typePm);
+                            Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
+                            note = "";
+                        }
                     }
                     else
                         Toast.makeText(getActivity(),"Please Check all Questions", Toast.LENGTH_SHORT).show();
@@ -233,17 +235,27 @@ public class YearPlan extends Fragment {
                             (checkBoxy13.isChecked() || checkBoxy14.isChecked())
 
                             ) {
-
                         note = edt.getText().toString();
                         status = 0;
-                        if (note.isEmpty()) {
-                            status=1;
-                            note = "ปกติ";
-                        }
-                        typePm = "yearly";
-                        listener.getDataFromFragment(note, status, typePm);
-                        Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
+                        if(checkBoxy2.isChecked() || checkBoxy4.isChecked() ||
+                                checkBoxy6.isChecked() || checkBoxy8.isChecked() ||
+                                checkBoxy10.isChecked() || checkBoxy12.isChecked() ||
+                                checkBoxy14.isChecked()) {
+                            if (note.matches("")){
+                                Toast.makeText(getActivity(), "Please take a note for some mistake", Toast.LENGTH_SHORT).show();
 
+                            } else {
+                                listener.getDataFromFragment(note, status, typePm);
+                                Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            status = 1;
+                            note = "ปกติ";
+                            edt.setText("", TextView.BufferType.EDITABLE);
+                            listener.getDataFromFragment(note, status, typePm);
+                            Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
+                            note = "";
+                        }
                     }
                     else
                         Toast.makeText(getActivity(),"Please Check all Questions", Toast.LENGTH_SHORT).show();
@@ -274,25 +286,26 @@ public class YearPlan extends Fragment {
                 @Override
                 public void onClick(View v) {
                     if((checkBoxy1.isChecked() || checkBoxy2.isChecked() )&&
-                            (checkBoxy3.isChecked() || checkBoxy4.isChecked())&&
-                            (checkBoxy5.isChecked() || checkBoxy6.isChecked())&&
-                            (checkBoxy7.isChecked() || checkBoxy8.isChecked())&&
-                            (checkBoxy9.isChecked() || checkBoxy10.isChecked())&&
-                            (checkBoxy11.isChecked() || checkBoxy12.isChecked())&&
-                            (checkBoxy13.isChecked() || checkBoxy14.isChecked())
-
+                            (checkBoxy3.isChecked() || checkBoxy4.isChecked())
                             ) {
-
                         note = edt.getText().toString();
                         status = 0;
-                        if (note.isEmpty()) {
-                            status=1;
-                            note = "ปกติ";
-                        }
-                        typePm = "yearly";
-                        listener.getDataFromFragment(note, status, typePm);
+                        if(checkBoxy2.isChecked() || checkBoxy4.isChecked()) {
+                            if (note.matches("")){
+                                Toast.makeText(getActivity(), "Please take a note for some mistake", Toast.LENGTH_SHORT).show();
 
-                        Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
+                            } else {
+                                listener.getDataFromFragment(note, status, typePm);
+                                Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            status = 1;
+                            note = "ปกติ";
+                            edt.setText("", TextView.BufferType.EDITABLE);
+                            listener.getDataFromFragment(note, status, typePm);
+                            Toast.makeText(getActivity(),"saved", Toast.LENGTH_SHORT).show();
+                            note = "";
+                        }
                     }
                     else
                         Toast.makeText(getActivity(),"Please Check all Questions", Toast.LENGTH_SHORT).show();
