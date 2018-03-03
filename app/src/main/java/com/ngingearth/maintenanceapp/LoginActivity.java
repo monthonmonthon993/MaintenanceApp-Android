@@ -61,7 +61,6 @@ public class LoginActivity extends AppCompatActivity {
                     loginProcess(name, password);
                 } else {
                     Toast.makeText(getApplicationContext(), "Fields are empty!", Toast.LENGTH_SHORT).show();
-
                 }
             }
         });

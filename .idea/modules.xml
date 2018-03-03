@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MaintenanceApp.iml" filepath="$PROJECT_DIR$/MaintenanceApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MaintenanceApp-Android.iml" filepath="$PROJECT_DIR$/MaintenanceApp-Android.iml" />
       <module fileurl="file://$PROJECT_DIR$/WheelPicker/WheelPicker.iml" filepath="$PROJECT_DIR$/WheelPicker/WheelPicker.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/calendarevent2-1/calendarevent2-1.iml" filepath="$PROJECT_DIR$/calendarevent2-1/calendarevent2-1.iml" />
