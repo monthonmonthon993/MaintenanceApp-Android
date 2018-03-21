@@ -41,6 +41,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static android.app.PendingIntent.getActivity;
+import static com.ngingearth.maintenanceapp.Constants.INSERT_PM_PLAN_API;
 
 public class planActivity extends AppCompatActivity implements MonthPlan.MyFragmentListener, YearPlan.MyFragmentListener {
 
@@ -51,8 +52,7 @@ public class planActivity extends AppCompatActivity implements MonthPlan.MyFragm
 
     public void getDataFromFragment(final String note, final int status, final String typePm) {
         Log.d("note", note);
-//        RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "https://barenz.000webhostapp.com/pm_plan_management/api/insert_data_from_post.php";
+        String url = INSERT_PM_PLAN_API;
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>()
                 {
