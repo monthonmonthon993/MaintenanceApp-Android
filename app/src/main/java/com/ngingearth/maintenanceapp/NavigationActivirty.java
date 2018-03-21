@@ -160,7 +160,6 @@ public class NavigationActivirty extends AppCompatActivity
             startActivity(intent);
             finish();
         } else if (id == R.id.nav_datasheet) {
-            Toast.makeText(NavigationActivirty.this, id, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(NavigationActivirty.this, DatasheetActivity.class);
             intent.putExtra("machineMap", machineMap); //Put your id to your next Intent
             intent.putExtra("employeeMap", employeeMap);

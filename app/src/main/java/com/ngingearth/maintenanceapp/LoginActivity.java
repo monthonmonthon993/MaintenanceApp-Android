@@ -26,19 +26,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class LoginActivity extends AppCompatActivity {
-//    private MobileServiceClient mClient;
     private ProgressDialog pDialog;
 
     private EditText inputName;
     private EditText inputPass;
     private Button btnSignin;
-    private SharedPreferences pref;
-
-    public static String CName;
-    public static String CPass;
-    public static String Position;
-    public static String Id;
-
     private RequestInterface requestInterface;
 
 
